@@ -11,7 +11,7 @@
 </head>
 <body class="bg-black h-screen text-white">
 
-<div id="toggleBar" class="hidden bg-[#1b1b1b] absolute h-screen w-[40%] right-0 z-0 " style="">
+<div id="toggleBar" class="hidden bg-[#1b1b1b] absolute h-screen w-[40%] right-[-40%] ease-in-out z-10" style="">
     <div class="flex h-full items-center">
         <ul class="ml-[15%] text-2xl md:text-4xl font-bold text-gray-400">
             <li class="text-white my-2 md:my-4"><a href="">Ana Sayfa</a></li>
@@ -23,13 +23,13 @@
     </div>
 </div>
 
-<header class="grid grid-cols-3 border-b-2 border-yellow-400 h-[15%]">
+<header class="grid grid-cols-2 md:grid-cols-3 border-b-2 border-yellow-400 h-[15%]">
     <div class="m-4 grid items-center">
         <a href="{{route("home")}}">
             <img class="w-64 " src="{{asset("images/logo.jpg")}}" alt="">
         </a>
     </div>
-    <div class="m-4 grid text-center justify-center text-white items-center">
+    <div class="hidden md:grid m-4 text-center justify-center text-white items-center">
 
         <a href="tel:+905358904888"
            class="font-bold text-2xl text-center justify-center items-center flex text-yellow-300">
@@ -65,25 +65,51 @@
 </header>
 
 
+
 <script>
     let val = 0;
     const toggleMenuBar = () => {
         let toggleBar = document.getElementById("toggleBar");
-        let menu_bar = document.getElementById("menu_bar")
-        let cross = document.getElementById("cross")
+        let menu_bar = document.getElementById("menu_bar");
+        let cross = document.getElementById("cross");
         if (val == 0) {
             val = 1;
-            toggleBar.classList.remove("hidden")
-            menu_bar.classList.add("hidden")
-            cross.classList.remove("hidden")
+            toggleBar.style.animation = "slideIn 0.3s forwards";
+            toggleBar.classList.remove("hidden");
+            menu_bar.classList.add("hidden");
+            cross.classList.remove("hidden");
         }else{
             val = 0;
-            toggleBar.classList.add("hidden")
-            menu_bar.classList.remove("hidden")
-            cross.classList.add("hidden")
+            toggleBar.style.animation = "slideOut 0.3s forwards";
+            menu_bar.classList.remove("hidden");
+            cross.classList.add("hidden");
+            setTimeout(() => {
+                toggleBar.classList.add("hidden")
+            }, 300)
         }
     }
 </script>
+
+<style>
+    @keyframes slideIn {
+        from {
+            right: -40%;
+        }
+        to {
+            right: 0;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            right: 0;
+        }
+        to {
+            right: -40%;
+        }
+    }
+</style>
+
 
 {{--<script>--}}
 {{--    let value = 0;--}}
