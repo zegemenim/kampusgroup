@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $path = base_path("public\images\projects");
+        $path_categories = base_path("public\images\categories");
+        $files = File::allFiles($path);
+        $files_categories = File::allFiles($path_categories);
+        return view('home', ["files" => $files, "files_categories" => $files_categories]);
     }
 }

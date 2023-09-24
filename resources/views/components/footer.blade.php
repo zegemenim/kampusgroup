@@ -1,4 +1,4 @@
-<footer class="grid md:grid-cols-3 border-t-2 border-yellow-400 justify-center text-center items-center justify-items-center">
+<footer class="grid md:grid-cols-3 border-t-2 border-yellow-400 justify-center text-center items-center justify-items-center mt-8">
     <div class="flex text-yellow-400 text-2xl justify-center items-center text-center">
         <ul>
             <li class="text-3xl m-6 font-bold">İletişim</li>
@@ -7,7 +7,7 @@
         </ul>
     </div>
     <div class="flex text-yellow-400 text-2xl justify-center items-center text-center ">
-        <ul class="text-3xl m-6 font-bold">Bizi takip edin
+        <ul class="text-3xl m-6 font-bold">Bizi Takip Edin
 
 
             <div class="grid gap-3 grid-cols-3 justify-center items-center text-center m-6">
