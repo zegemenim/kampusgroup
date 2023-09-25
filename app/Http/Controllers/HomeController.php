@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -29,5 +29,13 @@ class HomeController extends Controller
         $files = File::allFiles($path);
         $files_categories = File::allFiles($path_categories);
         return view('home', ["files" => $files, "files_categories" => $files_categories]);
+    }
+    public function arsa()
+    {
+        $path = base_path("public\images\projects");
+        $path_categories = base_path("public\images\categories");
+        $files = File::allFiles($path);
+        $files_categories = File::allFiles($path_categories);
+        return view('projects.arsa', ["files" => $files, "files_categories" => $files_categories]);
     }
 }
