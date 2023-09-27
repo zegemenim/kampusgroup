@@ -12,7 +12,7 @@
 </head>
 <body class="bg-black h-screen text-white">
 
-<div id="toggleBar" class="hidden bg-[#1b1b1b] absolute h-screen w-[40%] right-[-40%] ease-in-out z-10" style="">
+<div id="toggleBar" class="hidden bg-[#1b1b1b] absolute h-screen w-[80%] right-[-80%] md:w-[40%] md:right-[-40%] ease-in-out z-10" style="">
     <div class="flex h-full items-center">
         <ul class="ml-[15%] text-2xl md:text-4xl font-bold text-gray-400">
             <li class="text-white my-2 md:my-4"><a href="">Ana Sayfa</a></li>

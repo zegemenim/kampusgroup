@@ -6,7 +6,7 @@
 
 <main class="flex w-full">
     <div class="w-full">
-        <div class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Projelerimiz</h2></div>
+            <div class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Projelerimiz</h2></div>
         <div class="grid md:grid-cols-4 gap-8 text-center mx-4">
             @foreach($files as $file)
                 <div id="project_card"

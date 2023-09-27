@@ -38,4 +38,8 @@ class HomeController extends Controller
         $files_categories = File::allFiles($path_categories);
         return view('projects.arsa', ["files" => $files, "files_categories" => $files_categories]);
     }
+
+    public function ilan($id = null) {
+        return view('ilan', ["id" => $id]);
+    }
 }
