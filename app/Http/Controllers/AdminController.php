@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Advert;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -17,6 +18,10 @@ class AdminController extends Controller
     }
 
     public function ilanlar() {
-        return view('admin.ilanlar');
+        return view('admin.ilanlar', ["adverts" => Advert::all()]);
+    }
+
+    public function add_advert() {
+        return view('admin.add_advert');
     }
 }

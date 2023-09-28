@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description')->nullable();
-            $table->float('price')->nullable();
+            $table->bigInteger('price')->nullable();
             $table->string('image')->nullable();
             $table->float('area')->nullable();
             $table->string('location')->nullable();
-            $table->string('category')->nullable();
+            $table->string('zoning')->nullable();
             $table->string('status')->nullable();
             $table->string('type')->nullable();
             $table->timestamps();

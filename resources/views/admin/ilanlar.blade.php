@@ -1,7 +1,7 @@
 @include("components.admin_header")
 
 <div class="w-full text-center">
-    <a href="" class="w-full ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}" class="w-full ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Yeni İlan Ekle
     </a>
 </div>
@@ -10,22 +10,27 @@
     <thead class="">
     <tr>
         <th>Başlık</th>
+        <th>Açıklama</th>
         <th>Konum</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
     </tr>
     </thead>
     <tbody class="">
-    <tr class="">
-        <td class="">Tiger Nixon</td>
-        <td>System Architect</td>
-        <td>Edinburgh</td>
-        <td>61</td>
-    </tr>
+    @foreach($adverts as $advert)
+        <tr class="">
+            <td class="">{{$advert->title}}</td>
+            <td class="">{{$advert->description}}</td>
+            <td>{{$advert->location}}</td>
+            <td>{{$advert->created_at}}</td>
+            <td>{{$advert->updated_at}}</td>
+        </tr>
+    @endforeach
     </tbody>
     <tfoot>
     <tr>
         <th>Başlık</th>
+        <th>Açıklama</th>
         <th>Konum</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
