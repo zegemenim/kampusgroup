@@ -18,8 +18,8 @@
 
 <div class="justify-center items-center text-center border-b-2 border-yellow-400 mb-8">
     <ul class="flex justify-center items-center text-center">
-        <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="">Ana Sayfa</a></li>
-        <li class="flex"><a class="p-6 font-bold text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="">İlanlar</a></li>
-        <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="">Ana Sayfa</a></li>
+        <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="{{route("admin.home")}}">Ana Sayfa</a></li>
+        <li class="flex"><a class="p-6 font-bold text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="{{route("ilanlar")}}">İlanlar</a></li>
+        <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="">Çıkış Yap</a></li>
     </ul>
 </div>
