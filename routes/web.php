@@ -11,4 +11,5 @@ Route::post('/ilan-ekle/{type?}/', [\App\Http\Controllers\AdminController::class
 Route::get('/admin/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 Route::get('/admin/ilanlar', [\App\Http\Controllers\AdminController::class, 'ilanlar'])->name('ilanlar');
 Route::get('/arsa', [\App\Http\Controllers\HomeController::class, 'arsa'])->name('arsa');
+Route::get('/gayrimenkul', [\App\Http\Controllers\HomeController::class, 'gayrimenkul'])->name('gayrimenkul');
 Route::get('/ilan/{type?}/{id?}', [\App\Http\Controllers\HomeController::class, 'ilan'])->name('ilan');

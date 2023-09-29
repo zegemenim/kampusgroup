@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Advert;
 use App\Models\Arsa;
+use App\Models\Gayrimenkul;
 use App\Models\Home;
 use Illuminate\Http\Request;
 
@@ -30,9 +31,14 @@ class AdminController extends Controller
     public function ilanlar() {
         $all_adverts = [];
         $arsalar = Arsa::all();
+        $gayrimenkuller = Gayrimenkul::all();
         foreach ($arsalar as $arsa) {
             $arsa->type = "arsa";
             array_push($all_adverts, $arsa);
+        }
+        foreach ($gayrimenkuller as $gayrimenkul) {
+            $gayrimenkul->type = "gayrimenkul";
+            array_push($all_adverts, $gayrimenkul);
         }
         return view('admin.ilanlar', ["adverts" => $all_adverts]);
     }
@@ -66,6 +72,34 @@ class AdminController extends Controller
                 return redirect()->route('ilanlar');
             }
             return view('admin.add_arsa', ["type" => $type]);
+        }elseif ($type == "gayrimenkul") {
+            if ($request->isMethod('post')) {
+
+                $imagesPaths = [];
+
+                if ($request->hasFile('images')) {
+                    $images = $request->file('images');
+
+                    foreach ($images as $image) {
+                        $path = $image->store('public/uploads');
+                        $path = explode('/', $path)[2];
+                        $imagesPaths[] = $path;
+                    }
+                }
+
+                $advert = new Gayrimenkul();
+                $advert->title = $request->title;
+                $advert->description = $request->description;
+                $advert->price = $request->price;
+                $advert->area = $request->area;
+                $advert->location = $request->location;
+                $advert->zoning = $request->zoning;
+                $advert->status = $request->status;
+                $advert->image = json_encode($imagesPaths);
+                $advert->save();
+                return redirect()->route('ilanlar');
+            }
+            return view('admin.add_gayrimenkul', ["type" => $type]);
         }
         return view('ilanlar');
     }

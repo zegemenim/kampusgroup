@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/kampusgayrimenkul/">
+                    <a href="https://www.instagram.com/kampus_a.s/">
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 48 48" width="48px" height="48px">
                             <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"

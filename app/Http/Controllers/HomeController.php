@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Arsa;
+use App\Models\Gayrimenkul;
 use App\Models\Home;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -43,10 +44,23 @@ class HomeController extends Controller
         $adverts = Arsa::all();
         return view('projects.arsa', ["files" => $files, "files_categories" => $files_categories, "adverts" => $adverts]);
     }
+    public function gayrimenkul()
+    {
+        $path = base_path("public\images\projects");
+        $path_categories = base_path("public\images\categories");
+        $files = File::allFiles($path);
+        $files_categories = File::allFiles($path_categories);
+        $adverts = Gayrimenkul::all();
+        return view('projects.gayrimenkul', ["files" => $files, "files_categories" => $files_categories, "adverts" => $adverts]);
+    }
 
     public function ilan($type = null, $id = null) {
         if ($type == "arsa") {
             $advert = Arsa::find($id);
+            $images = json_decode($advert->image);
+            return view('ilan', ["advert" => $advert, "images" => $images]);
+        }elseif ($type == "gayrimenkul") {
+            $advert = Gayrimenkul::find($id);
             $images = json_decode($advert->image);
             return view('ilan', ["advert" => $advert, "images" => $images]);
         }
