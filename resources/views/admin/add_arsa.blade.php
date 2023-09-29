@@ -2,7 +2,7 @@
 
 <div class="text-center justify-start items-start">
     <h3 class="text-2xl font-bold text-center mb-8">İlan Ekle</h3>
-    <form action="" method="POST" class="">
+    <form action="" method="POST" class="" enctype="multipart/form-data">
         @csrf
         <div class="m-4">
             <div class="m-2"><label for="title" class="font-bold">Başlık</label></div>
@@ -36,6 +36,11 @@
                 <option value="2">Satıldı</option>
             </select>
         </div>
+        <div class="m-4">
+            <div class="m-2"><label for="images" class="font-bold">Fotoğraflar</label></div>
+            <input type="file" multiple name="images[]" id="images" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
+        </div>
+
         <button class="border-2 border-yellow-400 p-2 rounded-md hover:bg-yellow-400">Gönder</button>
     </form>
 </div>

@@ -1,7 +1,7 @@
 @include("components.admin_header")
 
 <div class="w-full text-center">
-    <a href="{{route("ilan-ekle")}}" class="w-full ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/arsa" class="w-full ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Arsa İlanı Ekle
     </a>
 </div>
