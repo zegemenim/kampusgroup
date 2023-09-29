@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Advert;
 use App\Models\Arsa;
+use App\Models\Home;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,7 +16,15 @@ class AdminController extends Controller
     }
 
     public function index() {
-        return view('admin.home');
+        $home = Home::first();
+        if (!$home){
+            $new_home = new Home;
+            $new_home->hakkimizda = "";
+            $new_home->save();
+            $home = Home::first();
+        }
+
+        return view('admin.home', ["home"=>$home]);
     }
 
     public function ilanlar() {
