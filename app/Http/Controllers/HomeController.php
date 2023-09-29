@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Arsa;
+use App\Models\Home;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $path_categories = base_path("public\images\categories");
         $files = File::allFiles($path);
         $files_categories = File::allFiles($path_categories);
-        return view('home', ["files" => $files, "files_categories" => $files_categories]);
+        $home = Home::first();
+        return view('home', ["files" => $files, "files_categories" => $files_categories, "home" => $home]);
     }
     public function arsa()
     {

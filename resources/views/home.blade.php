@@ -21,15 +21,7 @@
 
         <div class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Hakkımızda</h2></div>
         <div class="grid md:grid-cols-5">
-            <div class="mx-8 md:col-span-3 text-start justify-center items-center text-lg mb-8">Lorem ipsum dolor sit
-                amet, consectetur
-                adipisicing elit. Atque earum eligendi et explicabo, illo iste minus nostrum odio omnis provident quas
-                quis sapiente, voluptatibus. Eum molestiae obcaecati perspiciatis ut velit? Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Ab adipisci aliquid eaque eveniet id impedit incidunt laboriosam,
-                laudantium nesciunt, nihil nostrum porro praesentium provident quisquam quo temporibus ullam voluptate!
-                Consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque consequatur
-                explicabo inventore iste magnam optio quod repellat tempore temporibus. Alias cupiditate deserunt
-                dignissimos eos, minus odio qui quisquam voluptates.
+            <div class="mx-8 md:col-span-3 text-start justify-center items-center text-lg mb-8">{{$home->hakkimizda}}
             </div>
             <div class="md:col-span-2 grid md:grid-cols-2">
                 @php($i = 0)
