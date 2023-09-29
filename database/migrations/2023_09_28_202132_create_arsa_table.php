@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('adverts', function (Blueprint $table) {
+        Schema::create('arsa', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('description')->nullable();
