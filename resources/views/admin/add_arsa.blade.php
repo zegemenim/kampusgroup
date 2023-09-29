@@ -25,8 +25,8 @@
             <input type="text" name="location" id="location" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
         </div>
         <div class="m-4">
-            <div class="m-2"><label for="zonning" class="font-bold">İmar Durumu</label></div>
-            <input type="text" name="zonning" id="zonning" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
+            <div class="m-2"><label for="zoning" class="font-bold">İmar Durumu</label></div>
+            <input type="text" name="zoning" id="zoning" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
         </div>
         <div class="m-4">
             <div class="m-2"><label for="status" class="font-bold">İlan Durumu</label></div>
