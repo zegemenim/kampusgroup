@@ -31,6 +31,19 @@ class AdminController extends Controller
     public function add_advert(Request $request, $type = null) {
         if ($type == "arsa") {
             if ($request->isMethod('post')) {
+
+                $imagesPaths = [];
+
+                if ($request->hasFile('images')) {
+                    $images = $request->file('images');
+
+                    foreach ($images as $image) {
+                        $path = $image->store('public/uploads');
+                        $path = str_replace('public/', 'storage/', $path);
+                        $imagesPaths[] = $path;
+                    }
+                }
+
                 $advert = new Arsa();
                 $advert->title = $request->title;
                 $advert->description = $request->description;
@@ -39,6 +52,7 @@ class AdminController extends Controller
                 $advert->location = $request->location;
                 $advert->zoning = $request->zoning;
                 $advert->status = $request->status;
+                $advert->image = json_encode($imagesPaths);
                 $advert->save();
                 return redirect()->route('ilanlar');
             }
