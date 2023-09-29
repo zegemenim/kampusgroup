@@ -39,7 +39,7 @@ class AdminController extends Controller
 
                     foreach ($images as $image) {
                         $path = $image->store('public/uploads');
-                        $path = str_replace('public/', 'storage/', $path);
+                        $path = explode('/', $path)[2];
                         $imagesPaths[] = $path;
                     }
                 }

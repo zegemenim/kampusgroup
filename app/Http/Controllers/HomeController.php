@@ -45,7 +45,8 @@ class HomeController extends Controller
     public function ilan($type = null, $id = null) {
         if ($type == "arsa") {
             $advert = Arsa::find($id);
-            return view('ilan', ["advert" => $advert]);
+            $images = json_decode($advert->image);
+            return view('ilan', ["advert" => $advert, "images" => $images]);
         }
         return Redirect::route('home');
     }
