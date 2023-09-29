@@ -2,7 +2,7 @@
 
 <div class="w-full text-center">
     <a href="{{route("ilan-ekle")}}" class="w-full ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
-        Yeni İlan Ekle
+        Arsa İlanı Ekle
     </a>
 </div>
 
@@ -12,6 +12,7 @@
         <th>Başlık</th>
         <th>Açıklama</th>
         <th>Konum</th>
+        <th>Tip</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
     </tr>
@@ -22,6 +23,7 @@
             <td class="">{{$advert->title}}</td>
             <td class="">{{$advert->description}}</td>
             <td>{{$advert->location}}</td>
+            <td>{{$advert->type}}</td>
             <td>{{$advert->created_at}}</td>
             <td>{{$advert->updated_at}}</td>
         </tr>
@@ -32,6 +34,7 @@
         <th>Başlık</th>
         <th>Açıklama</th>
         <th>Konum</th>
+        <th>Tip</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
     </tr>
