@@ -36,7 +36,12 @@ class HomeController extends Controller
         $path_categories = base_path("public\images\categories");
         $files = File::allFiles($path);
         $files_categories = File::allFiles($path_categories);
+        // Home-> guests + 1
         $home = Home::first();
+        if ($home) {
+            $home->guests = $home->guests + 1;
+            $home->save();
+        }
         return view('home', ["files" => $files, "files_categories" => $files_categories, "home" => $home]);
     }
     public function arsa()

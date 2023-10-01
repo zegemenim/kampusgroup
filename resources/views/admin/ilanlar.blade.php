@@ -1,6 +1,6 @@
 @include("components.admin_header")
 
-<div class="w-full text-center">
+<div class="w-full text-center my-4">
     <a href="{{route("ilan-ekle")}}/arsa"
        class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Arsa İlanı Ekle
