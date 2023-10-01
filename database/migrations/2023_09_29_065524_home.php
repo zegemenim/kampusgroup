@@ -17,8 +17,7 @@ return new class extends Migration
             $table->longText('hakkimizda')->nullable();
             $table->string('img1')->nullable();
             $table->string('img2')->nullable();
-
-
+            $table->bigInteger('guests')->default(0);
             $table->timestamps();
         });
     }
