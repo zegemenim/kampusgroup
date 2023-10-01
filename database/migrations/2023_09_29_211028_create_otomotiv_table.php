@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('arsa', function (Blueprint $table) {
+        Schema::create('otomotiv', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->comment("Başlık");
             $table->string('description')->nullable();
             $table->bigInteger('price')->nullable();
+            $table->longText('brand')->nullable();
+            $table->longText('model')->nullable();
             $table->string('image')->nullable();
-            $table->float('area')->nullable();
-            $table->string('location')->nullable();
-            $table->string('zoning')->nullable();
             $table->integer('status')->nullable();
             $table->string('type')->nullable();
             $table->timestamps();
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('adverts');
+        Schema::dropIfExists('otomotiv');
     }
 };

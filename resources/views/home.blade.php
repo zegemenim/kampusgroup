@@ -1,12 +1,12 @@
 @include('components.header')
 
-<div class="h-[85%] bg-[url({{asset("images/menu-bg.jpg")}})]">
+<div class="h-[85%] bg-center bg-cover bg-fixed bg-[url({{asset("images/logo2.jpg")}})]">
 
 </div>
 
 <main class="flex w-full">
     <div class="w-full">
-            <div class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Projelerimiz</h2></div>
+            <div id="faaliyetler" class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Faaliyet Alanlarımız</h2></div>
         <div class="grid md:grid-cols-4 gap-8 text-center mx-4">
             @foreach($files as $file)
                 <div id="project_card"
@@ -19,7 +19,7 @@
             @endforeach
         </div>
 
-        <div class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Hakkımızda</h2></div>
+        <div id="hakkimizda" class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">Hakkımızda</h2></div>
         <div class="grid md:grid-cols-5">
             <div class="mx-8 md:col-span-3 text-start justify-center items-center text-lg mb-8">{{$home->hakkimizda}}
             </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">İletişime Geç</h2></div>
+        <div id="iletisim" class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">İletişime Geç</h2></div>
 
         <div class="grid md:grid-cols-2">
             <form action="" method="POST" class="grid md:grid-cols-2 items-center text-center gap-4 mx-4">
@@ -60,5 +60,20 @@
     </div>
 
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+
+</script>
 
 @include('components.footer')

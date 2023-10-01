@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('area')->nullable();
             $table->string('location')->nullable();
             $table->string('zoning')->nullable();
-            $table->string('status')->nullable();
+            $table->integer('status')->nullable();
             $table->string('type')->nullable();
             $table->timestamps();
         });

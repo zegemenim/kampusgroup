@@ -12,4 +12,8 @@ Route::get('/admin/', [\App\Http\Controllers\AdminController::class, 'index'])->
 Route::get('/admin/ilanlar', [\App\Http\Controllers\AdminController::class, 'ilanlar'])->name('ilanlar');
 Route::get('/arsa', [\App\Http\Controllers\HomeController::class, 'arsa'])->name('arsa');
 Route::get('/gayrimenkul', [\App\Http\Controllers\HomeController::class, 'gayrimenkul'])->name('gayrimenkul');
+Route::get('/dolmus', [\App\Http\Controllers\HomeController::class, 'dolmus'])->name('dolmus');
+Route::get('/plaka', [\App\Http\Controllers\HomeController::class, 'plaka'])->name('plaka');
+Route::get('/rentacar', [\App\Http\Controllers\HomeController::class, 'rentacar'])->name('rentacar');
+Route::get('/otomotiv', [\App\Http\Controllers\HomeController::class, 'otomotiv'])->name('otomotiv');
 Route::get('/ilan/{type?}/{id?}', [\App\Http\Controllers\HomeController::class, 'ilan'])->name('ilan');

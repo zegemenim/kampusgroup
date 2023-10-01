@@ -15,10 +15,25 @@
         </div>
         <div class="">
             <h3 class="text-3xl text-center mb-4 font-bold">{{$advert->title}}</h3>
-            <p class="text-lg ml-20 mb-2"><span class="font-bold">İmar Durumu:</span> {{$advert->zoning}}</p>
-            <p class="text-lg ml-20 mb-2"><span class="font-bold">m²:</span> {{$advert->area}}</p>
-            <p class="text-lg ml-20 mb-2"><span class="font-bold">Konum:</span> {{$advert->location}}</p>
-            <p class="text-lg ml-20 mb-2"><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
+            @if($type == "arsa" || $type == "gayrimenkul")
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">İmar Durumu:</span> {{$advert->zoning}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">m²:</span> {{$advert->area}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Konum:</span> {{$advert->location}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Açıklama:</span> {{$advert->description}}₺</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
+            @endif
+            @if($type == "dolmus" || $type == "plaka")
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Kira Bedeli:</span> {{$advert->bedel}}₺</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Araçlı/Araçsız:</span> {{$advert->vehicle == 1 ? "Araçlı" : "Araçsız"}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
+            @endif
+            @if($type == "rentacar" || $type == "otomotiv")
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Başlık:</span> {{$advert->title}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Marka:</span> {{$advert->brand}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Model:</span> {{$advert->model}}</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Açıklama:</span> {{$advert->description}}</p>
+            @endif
         </div>
     </div>
 </div>

@@ -7,6 +7,18 @@
     <a href="{{route("ilan-ekle")}}/gayrimenkul" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Gayrimenkul İlanı Ekle
     </a>
+    <a href="{{route("ilan-ekle")}}/dolmus" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+        Dolmuş Hattı İlanı Ekle
+    </a>
+    <a href="{{route("ilan-ekle")}}/plaka" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+        Ticari Plaka İlanı Ekle
+    </a>
+    <a href="{{route("ilan-ekle")}}/rentacar" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+        Rent A Car İlanı Ekle
+    </a>
+    <a href="{{route("ilan-ekle")}}/otomotiv" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+        Otomotiv İlanı Ekle
+    </a>
 </div>
 
 <table id="table" class="display" style="width:100%;">
@@ -14,7 +26,6 @@
     <tr>
         <th>Başlık</th>
         <th>Açıklama</th>
-        <th>Konum</th>
         <th>Tip</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
@@ -25,7 +36,6 @@
         <tr class="">
             <td class="">{{$advert->title}}</td>
             <td class="">{{$advert->description}}</td>
-            <td>{{$advert->location}}</td>
             <td>{{$advert->type}}</td>
             <td>{{$advert->created_at}}</td>
             <td>{{$advert->updated_at}}</td>
@@ -36,7 +46,6 @@
     <tr>
         <th>Başlık</th>
         <th>Açıklama</th>
-        <th>Konum</th>
         <th>Tip</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
