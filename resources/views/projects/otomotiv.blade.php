@@ -19,6 +19,7 @@
                                 <p><span class="font-bold">Marka:</span> {{$advert->brand}}</p>
                                 <p><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
                                 <p><span class="font-bold">Açıklama:</span> {{$advert->description}}</p>
+                                <p><span class="font-bold">Telefon:</span> {{$advert->phone}}</p>
                             </div>
                         </a>
                     </div>

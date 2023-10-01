@@ -29,6 +29,10 @@
             <input type="text" name="zoning" id="zoning" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
         </div>
         <div class="m-4">
+            <div class="m-2"><label for="phone" class="font-bold">Telefon</label></div>
+            <input type="text" name="phone" id="phone" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
+        </div>
+        <div class="m-4">
             <div class="m-2"><label for="status" class="font-bold">İlan Durumu</label></div>
             <select type="text" name="status" id="status" required class="rounded-md bg-black border-2 border-yellow-400 outline-none">
                 <option value="1">Aktif</option>

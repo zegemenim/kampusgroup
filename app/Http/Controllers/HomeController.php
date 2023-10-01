@@ -97,6 +97,10 @@ class HomeController extends Controller
     {
         return view('projects.yatirim', []);
     }
+    public function otoyikama()
+    {
+        return view('projects.otoyikama', []);
+    }
 
     public function ilan($type = null, $id = null) {
         if ($type == "arsa") {

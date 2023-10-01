@@ -18,6 +18,8 @@
                                 <p><span class="font-bold">Başlık:</span> {{$advert->title}}</p>
                                 <p><span class="font-bold">Kira Bedeli:</span> {{$advert->bedel}}₺</p>
                                 <p><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
+                                <p><span class="font-bold">Telefon:</span> {{$advert->phone}}</p>
+                                <p><span class="font-bold">Açıklama:</span> {{$advert->description}}</p>
                                 <p><span class="font-bold">Araçlı/Araçsız:</span> {{$advert->vehicle == 1 ? "Araçlı" : "Araçsız"}}</p>
                             </div>
                         </a>
