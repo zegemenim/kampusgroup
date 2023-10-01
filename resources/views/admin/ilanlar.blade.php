@@ -1,22 +1,28 @@
 @include("components.admin_header")
 
 <div class="w-full text-center">
-    <a href="{{route("ilan-ekle")}}/arsa" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/arsa"
+       class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Arsa İlanı Ekle
     </a>
-    <a href="{{route("ilan-ekle")}}/gayrimenkul" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/gayrimenkul"
+       class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Gayrimenkul İlanı Ekle
     </a>
-    <a href="{{route("ilan-ekle")}}/dolmus" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/dolmus"
+       class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Dolmuş Hattı İlanı Ekle
     </a>
-    <a href="{{route("ilan-ekle")}}/plaka" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/plaka"
+       class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Ticari Plaka İlanı Ekle
     </a>
-    <a href="{{route("ilan-ekle")}}/rentacar" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/rentacar"
+       class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Rent A Car İlanı Ekle
     </a>
-    <a href="{{route("ilan-ekle")}}/otomotiv" class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
+    <a href="{{route("ilan-ekle")}}/otomotiv"
+       class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Otomotiv İlanı Ekle
     </a>
 </div>
@@ -29,6 +35,7 @@
         <th>Tip</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
+        <th>Temizle</th>
     </tr>
     </thead>
     <tbody class="">
@@ -39,6 +46,9 @@
             <td>{{$advert->type}}</td>
             <td>{{$advert->created_at}}</td>
             <td>{{$advert->updated_at}}</td>
+            <td><a href="#"
+                   onclick="confirmDelete(event, '{{$advert->title}}', '{{route("delete_advert")}}/{{$advert->type}}/{{$advert->id}}')">Sil</a>
+            </td>
         </tr>
     @endforeach
     </tbody>
@@ -49,6 +59,7 @@
         <th>Tip</th>
         <th>Oluşturulma Tarihi</th>
         <th>Son Değiştirilme Tarihi</th>
+        <th>Temizle</th>
     </tr>
     </tfoot>
 </table>
@@ -83,6 +94,14 @@
             }
         });
     });
+
+    function confirmDelete(event, title, deleteUrl) {
+        event.preventDefault();
+        if (confirm(title + ' başlıklı ilanı silme işlemine devam etmek istiyor musunuz?')) {
+            window.location.href = deleteUrl;
+        }
+    }
+
 
 </script>
 

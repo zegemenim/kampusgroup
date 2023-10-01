@@ -93,6 +93,10 @@ class HomeController extends Controller
         $adverts = Otomotiv::all();
         return view('projects.otomotiv', ["files" => $files, "files_categories" => $files_categories, "adverts" => $adverts]);
     }
+    public function yatirim()
+    {
+        return view('projects.yatirim', []);
+    }
 
     public function ilan($type = null, $id = null) {
         if ($type == "arsa") {

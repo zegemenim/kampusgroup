@@ -12,6 +12,7 @@ use App\Models\Otomotiv;
 use App\Models\Plaka;
 use App\Models\Rentacar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -30,6 +31,12 @@ class AdminController extends Controller
         }
 
         return view('admin.home', ["home"=>$home]);
+    }
+
+    public function delete_advert($type=null, $id=null) {
+        $delete = DB::table($type)->where('id', '=', $id)->delete();
+
+        return redirect()->route('ilanlar');
     }
 
     public function ilanlar() {
@@ -93,6 +100,7 @@ class AdminController extends Controller
                 $advert->zoning = $request->zoning;
                 $advert->status = $request->status;
                 $advert->image = json_encode($imagesPaths);
+                $advert->phone = $request->phone;
                 $advert->save();
                 return redirect()->route('ilanlar');
             }
