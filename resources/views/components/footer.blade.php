@@ -86,6 +86,9 @@
                 src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=%C3%87amlaralt%C4%B1,%206060.%20Sk.%20No:7,%2020160%20Pamukkale/Denizli+(kamp%C3%BCs%20gayrimenkul)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
             <a href="https://www.maps.ie/population/">Find Population on Map</a></iframe>
     </div>
+
+
 </footer>
+<div class="opacity-30 text-sm text-center ">Görüntüleme Sayısı: {{\App\Models\Home::first()->guests}}</div>
 </body>
 </html>
