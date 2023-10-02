@@ -20,6 +20,7 @@ Route::get('/plaka', [\App\Http\Controllers\HomeController::class, 'plaka'])->na
 Route::get('/rentacar', [\App\Http\Controllers\HomeController::class, 'rentacar'])->name('rentacar');
 Route::get('/otomotiv', [\App\Http\Controllers\HomeController::class, 'otomotiv'])->name('otomotiv');
 Route::get('/yatirim', [\App\Http\Controllers\HomeController::class, 'yatirim'])->name('yatirim');
+Route::get('/oto-yikama', [\App\Http\Controllers\HomeController::class, 'otoyikama'])->name('otoyikama');
 Route::get('/admin/delete/{type?}/{id?}', [\App\Http\Controllers\AdminController::class, 'delete_advert'])->name('delete_advert');
 Route::get('/admin/delete_message/{id?}', [\App\Http\Controllers\AdminController::class, 'delete_message'])->name('delete_message');
 Route::get('/ilan/{type?}/{id?}', [\App\Http\Controllers\HomeController::class, 'ilan'])->name('ilan');

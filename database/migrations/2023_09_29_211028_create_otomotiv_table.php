@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->integer('status')->nullable();
             $table->string('type')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }
