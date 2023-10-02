@@ -41,12 +41,19 @@
 
         <div class="grid md:grid-cols-2">
             <form action="" method="POST" class="grid md:grid-cols-2 items-center text-center gap-4 mx-4">
+                @csrf
                 <input name="name" type="text"
                        class="bg-black border-2 text-2xl border-yellow-400 rounded-full placeholder:text-gray-100 justify-center items-center placeholder:text-lg placeholder:opacity-50 text-center outline-none focus:ring-1 focus:ring-yellow-400 ease-in-out duration-300 focus:shadow-yellow-500 focus:shadow-md hover:shadow-yellow-500 hover:shadow-md"
                        placeholder="Ad & Soyad">
                 <input name="email" type="text"
                        class="bg-black border-2 text-2xl border-yellow-400 rounded-full placeholder:text-gray-100 justify-center items-center placeholder:text-lg placeholder:opacity-50 text-center outline-none focus:ring-1 focus:ring-yellow-400 ease-in-out duration-300 focus:shadow-yellow-500 focus:shadow-md hover:shadow-yellow-500 hover:shadow-md"
                        placeholder="E-mail">
+                <input name="phone" type="text"
+                       class="bg-black border-2 text-2xl border-yellow-400 rounded-full placeholder:text-gray-100 justify-center items-center placeholder:text-lg placeholder:opacity-50 text-center outline-none focus:ring-1 focus:ring-yellow-400 ease-in-out duration-300 focus:shadow-yellow-500 focus:shadow-md hover:shadow-yellow-500 hover:shadow-md"
+                       placeholder="Telefon Numarası">
+                <input name="subject" type="text"
+                       class="bg-black border-2 text-2xl border-yellow-400 rounded-full placeholder:text-gray-100 justify-center items-center placeholder:text-lg placeholder:opacity-50 text-center outline-none focus:ring-1 focus:ring-yellow-400 ease-in-out duration-300 focus:shadow-yellow-500 focus:shadow-md hover:shadow-yellow-500 hover:shadow-md"
+                       placeholder="Konu">
                 <textarea
                     class="bg-black border-2 text-2xl border-yellow-400 rounded-xl placeholder:text-gray-100 justify-center items-center placeholder:text-lg placeholder:opacity-50 text-center outline-none focus:ring-1 focus:ring-yellow-400 md:col-span-2 ease-in-out duration-300 focus:shadow-yellow-500 focus:shadow-md hover:shadow-yellow-500 hover:shadow-md"
                     name="message" id="message" cols="30" rows="10" placeholder="Mesajınız..."></textarea>

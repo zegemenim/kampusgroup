@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Advert;
 use App\Models\Arsa;
+use App\Models\Contact;
 use App\Models\Dolmus;
 use App\Models\Gayrimenkul;
 use App\Models\Home;
@@ -31,6 +32,22 @@ class AdminController extends Controller
         }
 
         return view('admin.home', ["home"=>$home]);
+    }
+
+    public function messages() {
+        $messages = Contact::all();
+        return view('admin.messages', ["contacts"=>$messages]);
+    }
+
+    public function delete_message($id=null) {
+        $delete = DB::table('contact')->where('id', '=', $id)->delete();
+
+        return redirect()->route('messages');
+    }
+
+    public function show_message($id=null) {
+        $message = Contact::find($id);
+        return view('admin.show_message', ["contact"=>$message]);
     }
 
     public function delete_advert($type=null, $id=null) {

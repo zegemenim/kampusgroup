@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Arsa;
+use App\Models\Contact;
 use App\Models\Dolmus;
 use App\Models\Gayrimenkul;
 use App\Models\Home;
@@ -30,8 +31,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->method() == "POST") {
+            $contact = new Contact();
+            $contact->name = $request->name;
+            $contact->email = $request->email;
+            $contact->message = $request->message;
+            $contact->phone = $request->phone;
+            $contact->subject = $request->subject;
+            $contact->save();
+        }
         $path = base_path("public\images\projects");
         $path_categories = base_path("public\images\categories");
         $files = File::allFiles($path);
