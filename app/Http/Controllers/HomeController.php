@@ -114,7 +114,7 @@ class HomeController extends Controller
     }
     public function otoyikama()
     {
-        return view('projects.otoyikama', []);
+        return view('projects.otoyikama', ["images"=>[]]);
     }
 
     public function ilan($type = null, $id = null) {
