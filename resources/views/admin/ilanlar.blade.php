@@ -1,6 +1,6 @@
 @include("components.admin_header")
 
-<div class="w-full text-center my-4">
+<div class="w-full flex overflow-x-auto text-center my-4">
     <a href="{{route("ilan-ekle")}}/arsa"
        class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Arsa İlanı Ekle
@@ -27,43 +27,46 @@
     </a>
 </div>
 
-<table id="table" class="display" style="width:100%;">
-    <thead class="">
-    <tr>
-        <th>Başlık</th>
-        <th>Açıklama</th>
-        <th>Tip</th>
-        <th>Oluşturulma Tarihi</th>
-        <th>Son Değiştirilme Tarihi</th>
-        <th>Temizle</th>
-    </tr>
-    </thead>
-    <tbody class="">
-    @foreach($adverts as $advert)
-        <tr class="">
-            <td class="">{{$advert->title}}</td>
-            <td class="">{{$advert->description}}</td>
-            <td>{{$advert->type}}</td>
-            <td>{{$advert->created_at}}</td>
-            <td>{{$advert->updated_at}}</td>
-            <td><a href="#"
-                   onclick="confirmDelete(event, '{{$advert->title}}', '{{route("delete_advert")}}/{{$advert->type}}/{{$advert->id}}')">Sil</a>
-            </td>
-        </tr>
-    @endforeach
-    </tbody>
-    <tfoot>
-    <tr>
-        <th>Başlık</th>
-        <th>Açıklama</th>
-        <th>Tip</th>
-        <th>Oluşturulma Tarihi</th>
-        <th>Son Değiştirilme Tarihi</th>
-        <th>Temizle</th>
-    </tr>
-    </tfoot>
-</table>
+<div class="overflow-x-auto">
 
+    <table id="table" class="display">
+        <thead class="">
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Tip</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Son Değiştirilme Tarihi</th>
+            <th>Temizle</th>
+        </tr>
+        </thead>
+        <tbody class="">
+        @foreach($adverts as $advert)
+            <tr class="">
+                <td class="">{{$advert->title}}</td>
+                <td class="">{{$advert->description}}</td>
+                <td>{{$advert->type}}</td>
+                <td>{{$advert->created_at}}</td>
+                <td>{{$advert->updated_at}}</td>
+                <td><a href="#"
+                       onclick="confirmDelete(event, '{{$advert->title}}', '{{route("delete_advert")}}/{{$advert->type}}/{{$advert->id}}')">Sil</a>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Tip</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Son Değiştirilme Tarihi</th>
+            <th>Temizle</th>
+        </tr>
+        </tfoot>
+    </table>
+
+</div>
 
 <script>
     $(document).ready(function () {

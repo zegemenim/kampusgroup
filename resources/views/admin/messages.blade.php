@@ -1,45 +1,47 @@
 @include("components.admin_header")
 
+<div class="overflow-x-auto">
 
-<table id="table" class="display" style="width:100%;">
-    <thead class="">
-    <tr>
-        <th>İsim</th>
-        <th>E-mail</th>
-        <th>Telefon</th>
-        <th>Konu</th>
-        <th>Tarih</th>
-        <th>Görüntüle</th>
-        <th>Temizle</th>
-    </tr>
-    </thead>
-    <tbody class="">
-    @foreach($contacts as $contact)
-        <tr class="">
-            <td class="">{{$contact->name}}</td>
-            <td class="">{{$contact->email}}</td>
-            <td>{{$contact->phone}}</td>
-            <td>{{$contact->subject}}</td>
-            <td>{{$contact->created_at}}</td>
-            <td><a href="{{route("show-message")}}/{{$contact->id}}">Görüntüle</a></td>
-            <td><a href="#"
-                   onclick="confirmDelete(event, '{{$contact->name}}', '{{route("delete_message")}}/{{$contact->id}}')">Sil</a>
-            </td>
+    <table id="table" class="display" style="width:100%;">
+        <thead class="">
+        <tr>
+            <th>İsim</th>
+            <th>E-mail</th>
+            <th>Telefon</th>
+            <th>Konu</th>
+            <th>Tarih</th>
+            <th>Görüntüle</th>
+            <th>Temizle</th>
         </tr>
-    @endforeach
-    </tbody>
-    <tfoot>
-    <tr>
-        <th>İsim</th>
-        <th>E-mail</th>
-        <th>Telefon</th>
-        <th>Konu</th>
-        <th>Tarih</th>
-        <th>Görüntüle</th>
-        <th>Temizle</th>
-    </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody class="">
+        @foreach($contacts as $contact)
+            <tr class="">
+                <td class="">{{$contact->name}}</td>
+                <td class="">{{$contact->email}}</td>
+                <td>{{$contact->phone}}</td>
+                <td>{{$contact->subject}}</td>
+                <td>{{$contact->created_at}}</td>
+                <td><a href="{{route("show-message")}}/{{$contact->id}}">Görüntüle</a></td>
+                <td><a href="#"
+                       onclick="confirmDelete(event, '{{$contact->name}}', '{{route("delete_message")}}/{{$contact->id}}')">Sil</a>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>İsim</th>
+            <th>E-mail</th>
+            <th>Telefon</th>
+            <th>Konu</th>
+            <th>Tarih</th>
+            <th>Görüntüle</th>
+            <th>Temizle</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
 
 
 <script>

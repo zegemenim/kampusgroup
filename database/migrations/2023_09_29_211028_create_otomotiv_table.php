@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('price')->nullable();
             $table->longText('brand')->nullable();
             $table->longText('model')->nullable();
-            $table->string('image')->nullable();
+            $table->longText('image')->nullable();
             $table->integer('status')->nullable();
             $table->string('type')->nullable();
             $table->string('phone')->nullable();

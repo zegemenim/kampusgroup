@@ -22,13 +22,18 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
+    public function index(Request $request) {
         $home = Home::first();
         if (!$home){
             $new_home = new Home;
             $new_home->hakkimizda = "";
             $new_home->save();
             $home = Home::first();
+        }
+
+        if ($request->isMethod('post')) {
+            $home->hakkimizda = $request->hakkimizda;
+            $home->save();
         }
 
         return view('admin.home', ["home"=>$home]);

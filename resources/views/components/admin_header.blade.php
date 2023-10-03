@@ -21,6 +21,9 @@
         <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="{{route("admin.home")}}">Ana Sayfa</a></li>
         <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="{{route("ilanlar")}}">İlanlar</a></li>
         <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="{{route("messages")}}">Mesajlar</a></li>
-        <li class="flex"><a class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500" href="">Çıkış Yap</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+            <li class="flex"><button type="submit" class="p-6 text-sky-50 duration-500 ease-in-out hover:text-blue-500">Çıkış Yap</button></li>
+        </form>
     </ul>
 </div>

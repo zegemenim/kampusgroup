@@ -10,6 +10,7 @@ Route::post('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('
 Route::get('/ilan-ekle/{type?}/', [\App\Http\Controllers\AdminController::class, 'add_advert'])->name('ilan-ekle');
 Route::post('/ilan-ekle/{type?}/', [\App\Http\Controllers\AdminController::class, 'add_advert'])->name('ilan-ekle');
 Route::get('/admin/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
+Route::post('/admin/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 Route::get('/admin/ilanlar', [\App\Http\Controllers\AdminController::class, 'ilanlar'])->name('ilanlar');
 Route::get('/admin/mesajlar', [\App\Http\Controllers\AdminController::class, 'messages'])->name('messages');
 Route::get('/admin/mesaj-goruntule/{id?}', [\App\Http\Controllers\AdminController::class, 'show_message'])->name('show-message');
