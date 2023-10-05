@@ -7,7 +7,7 @@
         <div class="">
             @php($i = 0)
             @foreach($images as $image)
-                <img id="{{$i}}" src="{{asset("otoyikama/$image")}}" class="h-[85%] w-full hidden">
+                <img id="{{$i}}" src="{{asset("otoyikama/$image")}}" class="h-[85vh] w-full hidden">
                 @php($i++)
             @endforeach
             <div class="flex justify-between">
