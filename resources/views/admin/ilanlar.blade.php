@@ -13,9 +13,9 @@
        class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
         Dolmuş Hattı İlanı Ekle
     </a>
-    <a href="{{route("ilan-ekle")}}/plaka"
+    <a href="{{route("ilan-ekle")}}/insaat"
        class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">
-        Ticari Plaka İlanı Ekle
+        İnşaat İlanı Ekle
     </a>
     <a href="{{route("ilan-ekle")}}/rentacar"
        class="w-full mx-2 ease-in-out duration-300 bg-yellow-400 hover:bg-yellow-500 rounded-xl p-4">

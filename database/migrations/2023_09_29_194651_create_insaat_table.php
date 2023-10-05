@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plaka', function (Blueprint $table) {
+        Schema::create('insaat', function (Blueprint $table) {
             $table->id();
             $table->string('title')->comment("Başlık");
             $table->string('description')->nullable();
-            $table->bigInteger('price')->nullable();
-            $table->bigInteger('bedel')->nullable();
-            $table->longText('image')->nullable();
-            $table->integer('vehicle')->nullable();
             $table->integer('status')->nullable();
-            $table->string('type')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('type')->nullable()->default("insaat");
+            $table->longText("image")->nullable();
             $table->timestamps();
         });
     }

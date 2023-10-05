@@ -10,7 +10,7 @@ use App\Models\Dolmus;
 use App\Models\Gayrimenkul;
 use App\Models\Home;
 use App\Models\Otomotiv;
-use App\Models\Plaka;
+use App\Models\Insaat;
 use App\Models\Rentacar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +19,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'checkRank']);
     }
 
     public function index(Request $request) {
@@ -27,6 +27,7 @@ class AdminController extends Controller
         if (!$home){
             $new_home = new Home;
             $new_home->hakkimizda = "";
+
             $new_home->save();
             $home = Home::first();
         }
@@ -66,7 +67,7 @@ class AdminController extends Controller
         $arsalar = Arsa::all();
         $gayrimenkuller = Gayrimenkul::all();
         $dolmuslar = Dolmus::all();
-        $plakalar = Plaka::all();
+        $insaatlar = Insaat::all();
         $rentacars = Rentacar::all();
         $otomotivs = Otomotiv::all();
 
@@ -82,9 +83,9 @@ class AdminController extends Controller
             $dolmus->type = "dolmus";
             array_push($all_adverts, $dolmus);
         }
-        foreach ($plakalar as $plaka) {
-            $plaka->type = "plaka";
-            array_push($all_adverts, $plaka);
+        foreach ($insaatlar as $insaat) {
+            $insaat->type = "insaat";
+            array_push($all_adverts, $insaat);
         }
         foreach ($rentacars as $rentacar) {
             $rentacar->type = "rentacar";
@@ -182,7 +183,7 @@ class AdminController extends Controller
                 return redirect()->route('ilanlar');
             }
             return view('admin.add_dolmus', ["type" => $type]);
-        }elseif ($type == "plaka") {
+        }elseif ($type == "insaat") {
             if ($request->isMethod('post')) {
 
                 $imagesPaths = [];
@@ -197,18 +198,16 @@ class AdminController extends Controller
                     }
                 }
 
-                $advert = new Plaka();
+                $advert = new Insaat();
                 $advert->title = $request->title;
                 $advert->description = $request->description;
-                $advert->price = $request->price;
-                $advert->bedel = $request->bedel;
-                $advert->vehicle = $request->vehicle;
                 $advert->status = $request->status;
                 $advert->image = json_encode($imagesPaths);
+                $advert->type = "insaat";
                 $advert->save();
                 return redirect()->route('ilanlar');
             }
-            return view('admin.add_plaka', ["type" => $type]);
+            return view('admin.add_insaat', ["type" => $type]);
         }elseif ($type == "rentacar") {
             if ($request->isMethod('post')) {
 

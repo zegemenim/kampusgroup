@@ -17,7 +17,7 @@ Route::get('/admin/mesaj-goruntule/{id?}', [\App\Http\Controllers\AdminControlle
 Route::get('/arsa', [\App\Http\Controllers\HomeController::class, 'arsa'])->name('arsa');
 Route::get('/gayrimenkul', [\App\Http\Controllers\HomeController::class, 'gayrimenkul'])->name('gayrimenkul');
 Route::get('/dolmus', [\App\Http\Controllers\HomeController::class, 'dolmus'])->name('dolmus');
-Route::get('/plaka', [\App\Http\Controllers\HomeController::class, 'plaka'])->name('plaka');
+Route::get('/insaat', [\App\Http\Controllers\HomeController::class, 'insaat'])->name('insaat');
 Route::get('/rentacar', [\App\Http\Controllers\HomeController::class, 'rentacar'])->name('rentacar');
 Route::get('/otomotiv', [\App\Http\Controllers\HomeController::class, 'otomotiv'])->name('otomotiv');
 Route::get('/yatirim', [\App\Http\Controllers\HomeController::class, 'yatirim'])->name('yatirim');

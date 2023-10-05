@@ -1,6 +1,6 @@
 @include('components.header')
 
-<div class="h-[85%] bg-center bg-cover bg-fixed bg-[url({{asset("images/logo2.jpg")}})]">
+<div class="h-[30%] md:h-[85%] md:bg-center md:bg-cover bg-contain bg-no-repeat md:bg-fixed bg-[url({{asset("images/logo2.jpg")}})]">
 
 </div>
 
@@ -14,7 +14,7 @@
                      class="duration-300 ease-in-out hover:shadow-lg hover:shadow-yellow-500 rounded-3xl">
                     @php($file_name = explode(".", basename($file))[0])
                     <a href="@if(Route::has($file_name)) {{route($file_name)}} @else {{route("home")}} @endif"><img
-                            class="rounded-3xl" src="{{asset("images/projects/" . basename($file))}}"
+                            class="rounded-3xl text-center justify-center items-center bg-center place-items-center" src="{{asset("images/projects/" . basename($file))}}"
                             alt="{{$file_name}}">
                     </a>
                 </div>
@@ -43,7 +43,7 @@
         <div id="iletisim" class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">İletişime
                 Geç</h2></div>
 
-        <div class="grid md:grid-cols-2">
+        <div class="grid md:grid-cols-2 gap-4">
             <form action="" method="POST" class="grid md:grid-cols-2 items-center text-center gap-4 mx-4">
                 @csrf
                 <input name="name" type="text"
@@ -66,6 +66,7 @@
                     Gönder
                 </button>
             </form>
+            <img src="{{asset("images/yatirim.jpg")}}" alt="" class="rounded-3xl md:rounded-l-3xl">
         </div>
         <div>
             <div class="fixed bottom-5 right-5">

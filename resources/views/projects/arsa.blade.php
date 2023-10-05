@@ -12,7 +12,7 @@
                         <a href="{{route("ilan")}}/arsa/{{$advert->id}}" class="flex text-black hover:text-white ease-in-out duration-700">
                             @php($image = json_decode($advert->image)[0])
                             <div
-                                class="bg-[url({{asset("/storage/uploads/" . $image)}})] z-10 bg-auto bg-center max-h-[30vh] h-[30vh] ease-in-out duration-700 hover:opacity-30 w-full"></div>
+                                class="bg-[url({{asset("/storage/uploads/" . $image)}})] z-10 bg-contain bg-center max-h-[30vh] h-[30vh] ease-in-out duration-700 hover:opacity-30 w-full"></div>
                             <div
                                 class="absolute top-1/2 m-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-2 h-full w-full ">
                                 <p><span class="font-bold">Başlık:</span> {{$advert->title}}</p>

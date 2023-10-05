@@ -7,7 +7,7 @@
         <div class="">
             @php($i = 0)
             @foreach($images as $image)
-                <img id="{{$i}}" src="{{asset("storage/uploads/$image")}}" class="h-[85%] w-ful">
+                <img id="{{$i}}" src="{{asset("otoyikama/$image")}}" class="h-[85%] w-full hidden">
                 @php($i++)
             @endforeach
             <div class="flex justify-between">
@@ -15,11 +15,10 @@
                 <button class="py-6" onclick="next()"><svg fill="#ddd" height="32px" width="32px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 404.258 404.258" xml:space="preserve" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="289.927,18 265.927,0 114.331,202.129 265.927,404.258 289.927,386.258 151.831,202.129 "></polygon> </g></svg></button>
             </div>
         </div>
-        <img src="{{asset("images/")}}" alt="" class="h-[85%] w-full">
 
     </div>
-    <div class="grid grid-cols-2 m-12">
-        <div style="width: 80%" class="grid ">
+    <div class="grid md:grid-cols-2 m-12">
+        <div style="" class="mb-4 md:mx-4">
             <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Asmal%C4%B1evler,%20Kamp%C3%BCs%20Oto%20Y%C4%B1kama,%206601.%20Sokak,%20Pamukkale/Denizli+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
                 <a href="https://www.maps.ie/population/">Calculate population in area</a></iframe>
@@ -46,5 +45,31 @@
     </div>
 </main>
 
+<script>
+    let i = 0;
+    let images = [];
+    @foreach($images as $image)
+    images.push("{{$image}}");
+    @endforeach
+    const next = () => {
+        document.getElementById(i).classList.add("hidden");
+        if (i === images.length-1) {
+            i = 0;
+        } else {
+            i++;
+        }
+        document.getElementById(i).classList.remove("hidden");
+    }
+    const previous = () => {
+        document.getElementById(i).classList.add("hidden");
+        if (i === 0) {
+            i = images.length-1;
+        } else {
+            i--;
+        }
+        document.getElementById(i).classList.remove("hidden");
+    }
+    next();
+</script>
 
 @include("components.footer")
