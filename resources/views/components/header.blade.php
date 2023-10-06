@@ -13,7 +13,7 @@
 <body class="bg-black h-screen text-white">
 
 
-<div id="toggleBar" class="hidden bg-[#1b1b1b] absolute h-screen w-[80%] right-[-80%] md:w-[40%] md:right-[-40%] ease-in-out z-10" style="">
+<div id="toggleBar" class="hidden bg-[#1b1b1b] absolute h-screen w-[80%] right-[-80%] md:w-[40%] md:right-[-40%] ease-in-out z-50" style="">
     <div class="flex h-full items-center">
         <ul class="ml-[15%] text-2xl md:text-4xl font-bold text-gray-400">
             <li class="text-white my-2 md:my-4"><a href="{{route("home") . "#"}}">Ana Sayfa</a></li>
@@ -50,7 +50,7 @@
         </a>
     </div>
     <div class="m-4 grid justify-end text-center items-center">
-        <button onclick="toggleMenuBar()" class="z-10">
+        <button onclick="toggleMenuBar()" class="z-50">
             <svg class="" id="menu_bar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="40px"
                  height="40px" fill="#FCD34D">
                 <path

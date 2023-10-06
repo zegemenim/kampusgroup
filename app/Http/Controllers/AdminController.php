@@ -108,8 +108,29 @@ class AdminController extends Controller
                     $images = $request->file('images');
 
                     foreach ($images as $image) {
-                        $path = $image->store('public/uploads');
-                        $path = explode('/', $path)[2];
+                        $targetDir = "uploads/";
+                        $originalName = $image->getClientOriginalName();
+                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+
+                        $uploadOk = 1;
+                        if (!file_exists($targetDir)) {
+                            mkdir($targetDir, 0755, true);
+                        }
+                        if (file_exists(base_path() . "/" . $targetFile)) {
+                            echo "Üzgünüz, dosya daha önce kaydedilmiş.";
+                            $uploadOk = 0;
+                        }
+                        if ($uploadOk == 1) {
+                            if (move_uploaded_file($image->getPathname(), base_path() . "/" . $targetFile)) {
+                                echo "The file ". htmlspecialchars( basename( $_FILES["images"]["name"][0])). " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                                $uploadOk = 1;
+                                exit();
+                            }
+                        }
+
+                        $path = explode('/', $targetFile)[1];
                         $imagesPaths[] = $path;
                     }
                 }
@@ -124,6 +145,7 @@ class AdminController extends Controller
                 $advert->status = $request->status;
                 $advert->image = json_encode($imagesPaths);
                 $advert->phone = $request->phone;
+                $advert->type = "arsa";
                 $advert->save();
                 return redirect()->route('ilanlar');
             }
@@ -137,8 +159,29 @@ class AdminController extends Controller
                     $images = $request->file('images');
 
                     foreach ($images as $image) {
-                        $path = $image->store('public/uploads');
-                        $path = explode('/', $path)[2];
+                        $targetDir = "uploads/";
+                        $originalName = $image->getClientOriginalName();
+                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+
+                        $uploadOk = 1;
+                        if (!file_exists($targetDir)) {
+                            mkdir($targetDir, 0755, true);
+                        }
+                        if (file_exists(base_path() . "/" . $targetFile)) {
+                            echo "Üzgünüz, dosya daha önce kaydedilmiş.";
+                            $uploadOk = 0;
+                        }
+                        if ($uploadOk == 1) {
+                            if (move_uploaded_file($image->getPathname(), base_path() . "/" . $targetFile)) {
+                                echo "The file ". htmlspecialchars( basename( $_FILES["images"]["name"][0])). " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                                $uploadOk = 1;
+                                exit();
+                            }
+                        }
+
+                        $path = explode('/', $targetFile)[1];
                         $imagesPaths[] = $path;
                     }
                 }
@@ -151,6 +194,8 @@ class AdminController extends Controller
                 $advert->location = $request->location;
                 $advert->zoning = $request->zoning;
                 $advert->status = $request->status;
+                $advert->phone = $request->phone;
+                $advert->type = "gayrimenkul";
                 $advert->image = json_encode($imagesPaths);
                 $advert->save();
                 return redirect()->route('ilanlar');
@@ -165,8 +210,29 @@ class AdminController extends Controller
                     $images = $request->file('images');
 
                     foreach ($images as $image) {
-                        $path = $image->store('public/uploads');
-                        $path = explode('/', $path)[2];
+                        $targetDir = "uploads/";
+                        $originalName = $image->getClientOriginalName();
+                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+
+                        $uploadOk = 1;
+                        if (!file_exists($targetDir)) {
+                            mkdir($targetDir, 0755, true);
+                        }
+                        if (file_exists(base_path() . "/" . $targetFile)) {
+                            echo "Üzgünüz, dosya daha önce kaydedilmiş.";
+                            $uploadOk = 0;
+                        }
+                        if ($uploadOk == 1) {
+                            if (move_uploaded_file($image->getPathname(), base_path() . "/" . $targetFile)) {
+                                echo "The file ". htmlspecialchars( basename( $_FILES["images"]["name"][0])). " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                                $uploadOk = 1;
+                                exit();
+                            }
+                        }
+
+                        $path = explode('/', $targetFile)[1];
                         $imagesPaths[] = $path;
                     }
                 }
@@ -179,6 +245,8 @@ class AdminController extends Controller
                 $advert->vehicle = $request->vehicle;
                 $advert->status = $request->status;
                 $advert->image = json_encode($imagesPaths);
+                $advert->phone = $request->phone;
+                $advert->type = "dolmus";
                 $advert->save();
                 return redirect()->route('ilanlar');
             }
@@ -192,8 +260,29 @@ class AdminController extends Controller
                     $images = $request->file('images');
 
                     foreach ($images as $image) {
-                        $path = $image->store('public/uploads');
-                        $path = explode('/', $path)[2];
+                        $targetDir = "uploads/";
+                        $originalName = $image->getClientOriginalName();
+                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+
+                        $uploadOk = 1;
+                        if (!file_exists($targetDir)) {
+                            mkdir($targetDir, 0755, true);
+                        }
+                        if (file_exists(base_path() . "/" . $targetFile)) {
+                            echo "Üzgünüz, dosya daha önce kaydedilmiş.";
+                            $uploadOk = 0;
+                        }
+                        if ($uploadOk == 1) {
+                            if (move_uploaded_file($image->getPathname(), base_path() . "/" . $targetFile)) {
+                                echo "The file ". htmlspecialchars( basename( $_FILES["images"]["name"][0])). " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                                $uploadOk = 1;
+                                exit();
+                            }
+                        }
+
+                        $path = explode('/', $targetFile)[1];
                         $imagesPaths[] = $path;
                     }
                 }
@@ -217,8 +306,29 @@ class AdminController extends Controller
                     $images = $request->file('images');
 
                     foreach ($images as $image) {
-                        $path = $image->store('public/uploads');
-                        $path = explode('/', $path)[2];
+                        $targetDir = "uploads/";
+                        $originalName = $image->getClientOriginalName();
+                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+
+                        $uploadOk = 1;
+                        if (!file_exists($targetDir)) {
+                            mkdir($targetDir, 0755, true);
+                        }
+                        if (file_exists(base_path() . "/" . $targetFile)) {
+                            echo "Üzgünüz, dosya daha önce kaydedilmiş.";
+                            $uploadOk = 0;
+                        }
+                        if ($uploadOk == 1) {
+                            if (move_uploaded_file($image->getPathname(), base_path() . "/" . $targetFile)) {
+                                echo "The file ". htmlspecialchars( basename( $_FILES["images"]["name"][0])). " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                                $uploadOk = 1;
+                                exit();
+                            }
+                        }
+
+                        $path = explode('/', $targetFile)[1];
                         $imagesPaths[] = $path;
                     }
                 }
@@ -230,6 +340,8 @@ class AdminController extends Controller
                 $advert->brand = $request->brand;
                 $advert->model = $request->model;
                 $advert->status = $request->status;
+                $advert->phone = $request->phone;
+                $advert->type = "rentacar";
                 $advert->image = json_encode($imagesPaths);
                 $advert->save();
                 return redirect()->route('ilanlar');
@@ -244,8 +356,29 @@ class AdminController extends Controller
                     $images = $request->file('images');
 
                     foreach ($images as $image) {
-                        $path = $image->store('public/uploads');
-                        $path = explode('/', $path)[2];
+                        $targetDir = "uploads/";
+                        $originalName = $image->getClientOriginalName();
+                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+
+                        $uploadOk = 1;
+                        if (!file_exists($targetDir)) {
+                            mkdir($targetDir, 0755, true);
+                        }
+                        if (file_exists(base_path() . "/" . $targetFile)) {
+                            echo "Üzgünüz, dosya daha önce kaydedilmiş.";
+                            $uploadOk = 0;
+                        }
+                        if ($uploadOk == 1) {
+                            if (move_uploaded_file($image->getPathname(), base_path() . "/" . $targetFile)) {
+                                echo "The file ". htmlspecialchars( basename( $_FILES["images"]["name"][0])). " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                                $uploadOk = 1;
+                                exit();
+                            }
+                        }
+
+                        $path = explode('/', $targetFile)[1];
                         $imagesPaths[] = $path;
                     }
                 }
@@ -257,6 +390,8 @@ class AdminController extends Controller
                 $advert->brand = $request->brand;
                 $advert->model = $request->model;
                 $advert->status = $request->status;
+                $advert->phone = $request->phone;
+                $advert->type = "otomotiv";
                 $advert->image = json_encode($imagesPaths);
                 $advert->save();
                 return redirect()->route('ilanlar');

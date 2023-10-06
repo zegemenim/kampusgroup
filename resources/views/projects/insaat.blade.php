@@ -11,7 +11,7 @@
                     <div class="relative inline-block">
                         <div class="flex ">
                             @php($image = json_decode($advert->image)[0])
-                            <img src="{{asset("/storage/uploads/" . $image)}}" alt="" class="max-h-[30vh]">
+                            <img src="{{asset("/uploads/" . $image)}}" alt="" class="max-h-[30vh]">
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->bigInteger('price')->nullable();
             $table->longText('image')->nullable();
-            $table->float('area')->nullable();
+            $table->longText('area')->nullable();
             $table->string('location')->nullable();
             $table->string('zoning')->nullable();
             $table->integer('status')->nullable();
