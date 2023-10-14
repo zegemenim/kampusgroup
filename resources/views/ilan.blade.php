@@ -24,11 +24,10 @@
                 <p class="text-lg ml-20 mb-2"><span class="font-bold">Telefon:</span> {{$advert->phone}}</p>
             @endif
             @if($type == "dolmus" || $type == "plaka")
-                <p class="text-lg ml-20 mb-2"><span class="font-bold">Açıklama:</span> {{$advert->description}}₺</p>
+                <p class="text-lg ml-20 mb-2"><span class="font-bold">Açıklama:</span> {{$advert->description}}</p>
                 <p class="text-lg ml-20 mb-2"><span class="font-bold">Kira Bedeli:</span> {{$advert->bedel}}₺</p>
                 <p class="text-lg ml-20 mb-2"><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
                 <p class="text-lg ml-20 mb-2"><span class="font-bold">Araçlı/Araçsız:</span> {{$advert->vehicle == 1 ? "Araçlı" : "Araçsız"}}</p>
-                <p class="text-lg ml-20 mb-2"><span class="font-bold">Fiyat:</span> {{$advert->price}}₺</p>
                 <p class="text-lg ml-20 mb-2"><span class="font-bold">Telefon:</span> {{$advert->phone}}</p>
             @endif
             @if($type == "rentacar" || $type == "otomotiv")

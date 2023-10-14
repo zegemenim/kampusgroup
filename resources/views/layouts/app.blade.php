@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Kampüs Group') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -15,6 +15,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="{{asset("build/assets/app-9eaef63e.js")}}"></script>
+    <link rel="stylesheet" href="{{asset("build/assets/app-041e359a.css")}}">
 </head>
 <body>
     <div id="app">

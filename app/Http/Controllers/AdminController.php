@@ -110,7 +110,10 @@ class AdminController extends Controller
                     foreach ($images as $image) {
                         $targetDir = "uploads/";
                         $originalName = $image->getClientOriginalName();
-                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+                        $parts = explode(".", $originalName);
+                        $extension = end($parts);
+                        $file_name = uniqid() . "." . $extension;
+                        $targetFile = $targetDir . uniqid() . $file_name;
 
                         $uploadOk = 1;
                         if (!file_exists($targetDir)) {
@@ -161,7 +164,10 @@ class AdminController extends Controller
                     foreach ($images as $image) {
                         $targetDir = "uploads/";
                         $originalName = $image->getClientOriginalName();
-                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+                        $parts = explode(".", $originalName);
+                        $extension = end($parts);
+                        $file_name = uniqid() . "." . $extension;
+                        $targetFile = $targetDir . uniqid() . $file_name;
 
                         $uploadOk = 1;
                         if (!file_exists($targetDir)) {
@@ -212,7 +218,10 @@ class AdminController extends Controller
                     foreach ($images as $image) {
                         $targetDir = "uploads/";
                         $originalName = $image->getClientOriginalName();
-                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+                        $parts = explode(".", $originalName);
+                        $extension = end($parts);
+                        $file_name = uniqid() . "." . $extension;
+                        $targetFile = $targetDir . uniqid() . $file_name;
 
                         $uploadOk = 1;
                         if (!file_exists($targetDir)) {
@@ -262,7 +271,10 @@ class AdminController extends Controller
                     foreach ($images as $image) {
                         $targetDir = "uploads/";
                         $originalName = $image->getClientOriginalName();
-                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+                        $parts = explode(".", $originalName);
+                        $extension = end($parts);
+                        $file_name = uniqid() . "." . $extension;
+                        $targetFile = $targetDir . uniqid() . $file_name;
 
                         $uploadOk = 1;
                         if (!file_exists($targetDir)) {
@@ -308,7 +320,10 @@ class AdminController extends Controller
                     foreach ($images as $image) {
                         $targetDir = "uploads/";
                         $originalName = $image->getClientOriginalName();
-                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+                        $parts = explode(".", $originalName);
+                        $extension = end($parts);
+                        $file_name = uniqid() . "." . $extension;
+                        $targetFile = $targetDir . uniqid() . $file_name;
 
                         $uploadOk = 1;
                         if (!file_exists($targetDir)) {
@@ -358,7 +373,10 @@ class AdminController extends Controller
                     foreach ($images as $image) {
                         $targetDir = "uploads/";
                         $originalName = $image->getClientOriginalName();
-                        $targetFile = $targetDir . uniqid() . "_" . str_replace(' ', '_', $originalName);
+                        $parts = explode(".", $originalName);
+                        $extension = end($parts);
+                        $file_name = uniqid() . "." . $extension;
+                        $targetFile = $targetDir . uniqid() . $file_name;
 
                         $uploadOk = 1;
                         if (!file_exists($targetDir)) {

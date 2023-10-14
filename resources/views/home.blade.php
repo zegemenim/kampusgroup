@@ -24,7 +24,11 @@
         <div id="hakkimizda" class="w-full text-center text-4xl md:text-6xl font-bold my-16"><h2 class="">
                 Hakkımızda</h2></div>
         <div class="grid md:grid-cols-5">
-            <div class="mx-8 md:col-span-3 text-start justify-center items-center text-lg mb-8">{{$home->hakkimizda}}
+            @php($hakkimizda = explode("\n", $home->hakkimizda))
+            <div class="mx-8 md:col-span-3 text-start justify-center items-center text-lg mb-8">
+                @foreach($hakkimizda as $hakkimizda_item)
+                    <p>{{$hakkimizda_item}}</p><br>
+                @endforeach
             </div>
             <div class="md:col-span-2 grid md:grid-cols-2">
                 @php($i = 0)
@@ -69,7 +73,7 @@
             <img src="{{asset("images/yatirim.jpg")}}" alt="" class="rounded-3xl md:rounded-l-3xl">
         </div>
         <div>
-            <div class="fixed bottom-5 right-5">
+            <div class="hidden md:flex fixed bottom-5 right-5">
                 <button id="scrollButton"
                         class="  text-white font-bold py-2 px-4 rounded-full opacity-0 transition-opacity duration-300">
                     <svg class="animate-bounce" fill="#facc15" height="64px" width="64px" version="1.1" id="Layer_1"

@@ -48,8 +48,7 @@
                 <td>{{$advert->type}}</td>
                 <td>{{$advert->created_at}}</td>
                 <td>{{$advert->updated_at}}</td>
-                <td><a href="#"
-                       onclick="confirmDelete(event, '{{$advert->title}}', '{{route("delete_advert")}}/{{$advert->type}}/{{$advert->id}}')">Sil</a>
+                <td><a href="{{route("delete_advert")}}/{{$advert->type}}/{{$advert->id}}" >Sil</a>
                 </td>
             </tr>
         @endforeach

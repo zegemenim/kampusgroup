@@ -2,7 +2,7 @@
     <div class="flex text-yellow-400 text-2xl justify-center items-center text-center">
         <ul>
             <li class="text-3xl m-6 font-bold">İletişim</li>
-            <li class=" text-2xl">Telefon: 0535 890 48 88</li>
+            <li class=" text-2xl">Telefon: <a href="tel: +90 535 890 48 88">0535 890 48 88</a></li>
             <li class="m-4 text-2xl">E-posta: serkan.yilmaz.ds@hotmail.com.tr</li>
         </ul>
     </div>
