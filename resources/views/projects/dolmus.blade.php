@@ -10,7 +10,7 @@
                 <div class="grid md:grid-cols-1 p-4" id="card">
                     <div class="relative inline-block">
                         <a href="{{route("ilan")}}/dolmus/{{$advert->id}}" class="flex text-black hover:text-white ease-in-out duration-700">
-                            @php($image = json_decode($advert->image)[1])
+                            @php($image = json_decode($advert->image)[0])
                             <div
                                 class="bg-[url({{env("APP_URL") . "/uploads/" . $image}})] z-10 bg-contain bg-center max-h-[30vh] h-[30vh] ease-in-out duration-700 hover:opacity-30 w-full"></div>
                             <div
